@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 
 public class BuildingManager : MonoBehaviour
 {
+    public NavMeshSurface surface;
+    public GameObject navMeshRoad;
+
     public GameObject[] objects;
     private GameObject pendingObject;
 
@@ -19,6 +23,13 @@ public class BuildingManager : MonoBehaviour
     public float gridSize;
     bool gridOn = true;
     [SerializeField] private Toggle gridToggle;
+
+    private void Start()
+    {
+        Debug.Log("Before " + surface);
+        surface = navMeshRoad.GetComponent<NavMeshSurface>();
+        Debug.Log(surface);
+    }
 
     private void Update()
     {
@@ -38,6 +49,8 @@ public class BuildingManager : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 PlaceObject();
+
+                surface.BuildNavMesh();
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
@@ -69,6 +82,13 @@ public class BuildingManager : MonoBehaviour
     public void SelectObject(int index)
     {
         pendingObject = Instantiate(objects[index], pos, transform.rotation);
+        Debug.Log("So6");
+        
+        if (index == 2)
+        {
+            Debug.Log(pendingObject);
+            pendingObject.transform.SetParent(navMeshRoad.transform);
+        }
     }
 
     public void ToggleGrid()
