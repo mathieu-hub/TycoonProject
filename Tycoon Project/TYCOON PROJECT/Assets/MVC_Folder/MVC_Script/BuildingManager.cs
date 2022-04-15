@@ -7,8 +7,10 @@ using UnityEngine.AI;
 
 public class BuildingManager : MonoBehaviour
 {
-    public NavMeshSurface surface;
+    public NavMeshSurface surfaceRoad;
     public GameObject navMeshRoad;
+
+    public List<GameObject> parkingPlace = new List<GameObject>();
 
     public GameObject[] objects;
     private GameObject pendingObject;
@@ -17,24 +19,25 @@ public class BuildingManager : MonoBehaviour
 
     private RaycastHit hit;
     [SerializeField] private LayerMask layerMask;
-
+    
     public float rotateAmount;
 
     public float gridSize;
     bool gridOn = true;
     [SerializeField] private Toggle gridToggle;
 
+
     private void Start()
     {
-        Debug.Log("Before " + surface);
-        surface = navMeshRoad.GetComponent<NavMeshSurface>();
-        Debug.Log(surface);
+        
     }
 
     private void Update()
     {
         if (pendingObject != null)
         {
+            pendingObject.GetComponent<Collider>().enabled = false;
+
             if (gridOn)
             {
                 pendingObject.transform.position = new Vector3(
@@ -48,10 +51,13 @@ public class BuildingManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                pendingObject.GetComponent<Collider>().enabled = true;
+
                 PlaceObject();
 
-                surface.BuildNavMesh();
+                surfaceRoad.BuildNavMesh();
             }
+
             if (Input.GetKeyDown(KeyCode.R))
             {
                 RotateObject();
@@ -82,12 +88,15 @@ public class BuildingManager : MonoBehaviour
     public void SelectObject(int index)
     {
         pendingObject = Instantiate(objects[index], pos, transform.rotation);
-        Debug.Log("So6");
         
-        if (index == 2)
+        if (index == 1 || index == 2)
         {
-            Debug.Log(pendingObject);
             pendingObject.transform.SetParent(navMeshRoad.transform);
+
+            if (index == 1)
+            {
+                parkingPlace.Add(pendingObject);
+            }
         }
     }
 
