@@ -9,6 +9,7 @@ public class PeopleController : MonoBehaviour
 
     void Update()
     {
+        //Récupère la position du pointeur de la souris dans l'espace lors du clic.
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -16,7 +17,7 @@ public class PeopleController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                agent.SetDestination(hit.point);
+                agent.SetDestination(hit.point); //Octroie la position comme destination à l'agent.
             }
         }
     }
