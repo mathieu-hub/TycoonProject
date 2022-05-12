@@ -9,6 +9,8 @@ public class BuildingManager : MonoBehaviour
 {
     public NavMeshSurface surfaceRoad;
     public GameObject navMeshRoad;
+    [Space(10)]
+    public UI_ParkingCounter ui_ParkingCounter;
 
     public List<GameObject> parkingPlace = new List<GameObject>();
 
@@ -95,7 +97,8 @@ public class BuildingManager : MonoBehaviour
 
             if (index == 1) //Lorsque l'objet parkingPlace est sélectionné, il est ajouté dans la liste de place de parking.
             {
-                parkingPlace.Add(pendingObject); 
+                parkingPlace.Add(pendingObject);
+                ui_ParkingCounter.UIaddParkPlace(); //Ajoute une place au compteur de place Total (UI).
             }
         }
     }
