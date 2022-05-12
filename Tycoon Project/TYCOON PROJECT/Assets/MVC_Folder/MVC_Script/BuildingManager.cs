@@ -15,6 +15,7 @@ public class BuildingManager : MonoBehaviour
     public List<GameObject> parkingPlace = new List<GameObject>();
 
     public GameObject[] objects;
+    [SerializeField]
     private GameObject pendingObject;
 
     private Vector3 pos;
@@ -64,6 +65,11 @@ public class BuildingManager : MonoBehaviour
             {
                 RotateObject();
             }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                DeleteSelectObject();
+            }
         }
     }
 
@@ -75,6 +81,11 @@ public class BuildingManager : MonoBehaviour
     public void RotateObject()
     {
         pendingObject.transform.Rotate(Vector3.up, rotateAmount); //Rotation de l'objet sélectionné.
+    }
+
+    public void DeleteSelectObject()
+    {
+        Destroy(pendingObject);
     }
 
     private void FixedUpdate()
