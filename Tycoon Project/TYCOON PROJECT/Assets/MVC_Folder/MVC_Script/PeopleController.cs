@@ -5,9 +5,20 @@ public class PeopleController : MonoBehaviour
 {
     public Camera cam;
 
+    public enum typeOfPeople {IA, Playable};
+    typeOfPeople _typeOfPeople;
+
     public NavMeshAgent agent;
 
     void Update()
+    {
+        if (_typeOfPeople == typeOfPeople.Playable)
+        {
+            ControllingPeople();
+        }       
+    }
+
+    private void ControllingPeople() //Fonction permettant de prendre le contrôle de la destination d'un People.
     {
         //Récupère la position du pointeur de la souris dans l'espace lors du clic.
         if (Input.GetMouseButtonDown(0))
