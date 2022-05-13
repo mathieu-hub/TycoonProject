@@ -1004,7 +1004,7 @@ MonoBehaviour:
   ui_ParkingCounter: {fileID: 1908914048}
   parkingPlace: []
   objects:
-  - {fileID: 3239651067596153390, guid: daa6c20f001d78d43857b5bab5f3bb62, type: 3}
+  - {fileID: 8582792888328682990, guid: cb23c5c9b0a15e749b078c9e976d1611, type: 3}
   - {fileID: 5566923504990323537, guid: f4a11f7ee13f1dd4bae34bdd8112b097, type: 3}
   - {fileID: 8582792888328682990, guid: c47c81d4d9a3f5740be4546037bb3683, type: 3}
   pendingObject: {fileID: 0}
@@ -1736,13 +1736,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620835855}
-  m_LocalRotation: {x: 0.305593, y: -0.691338, z: 0.4221601, w: 0.50044537}
-  m_LocalPosition: {x: 17, y: 30, z: -5}
+  m_LocalRotation: {x: 0.31850252, y: -0.68012697, z: 0.4399939, w: 0.49232998}
+  m_LocalPosition: {x: 14.12, y: 38.57, z: -5.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 62.82, y: -108.2, z: 0}
+  m_LocalEulerAnglesHint: {x: 65.8, y: -108.2, z: 0}
 --- !u!114 &1620835859
 MonoBehaviour:
   m_ObjectHideFlags: 0

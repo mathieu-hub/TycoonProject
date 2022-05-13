@@ -101,7 +101,7 @@ public class BuildingManager : MonoBehaviour
     {
         pendingObject = Instantiate(objects[index], pos, transform.rotation); //Instantiation de l'objet sélectionné selon l'index des objets référencés.
         
-        if (index == 1 || index == 2)
+        if (index == 0 || index == 1 || index == 2)
         {
             //Activation et set la grid sur 10 pour le snapping
             gridSize = 10;
