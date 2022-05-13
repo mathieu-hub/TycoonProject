@@ -85,6 +85,10 @@ public class BuildingManager : MonoBehaviour
 
     public void DeleteSelectObject()
     {
+        if (pendingObject.CompareTag("ParkPlace"))
+        {
+            ui_ParkingCounter.UIdeleteParkPlace();
+        }
         Destroy(pendingObject);
     }
 
@@ -114,7 +118,7 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
-    public void ToggleGrid() //Activation et désactivation de la grid
+    public void ToggleGrid() //Activation et désactivation de la grid (Fonction appelée depuis le Toggle)
     {
         if (gridToggle.isOn)
         {

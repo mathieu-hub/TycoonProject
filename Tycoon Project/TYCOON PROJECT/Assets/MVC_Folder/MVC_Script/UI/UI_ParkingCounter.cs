@@ -20,4 +20,10 @@ public class UI_ParkingCounter : MonoBehaviour
         parkPlaceCounter++;
         parkPlaceCounterText.SetText(parkPlaceCounter.ToString());
     }
+
+    public void UIdeleteParkPlace()
+    {
+        parkPlaceCounter--;
+        parkPlaceCounterText.SetText(parkPlaceCounter.ToString());
+    }
 }
