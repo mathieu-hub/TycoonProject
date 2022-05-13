@@ -30,11 +30,6 @@ public class BuildingManager : MonoBehaviour
     [SerializeField] private Toggle gridToggle;
 
 
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         if (pendingObject != null)
@@ -108,6 +103,10 @@ public class BuildingManager : MonoBehaviour
         
         if (index == 1 || index == 2)
         {
+            //Activation et set la grid sur 10 pour le snapping
+            gridSize = 10;
+            gridOn = true; 
+
             pendingObject.transform.SetParent(navMeshRoad.transform); //Place les objets en parents du NavMeshRoad qui contient le navmesh pour les peoples.
 
             if (index == 1) //Lorsque l'objet parkingPlace est sélectionné, il est ajouté dans la liste de place de parking.
@@ -115,6 +114,16 @@ public class BuildingManager : MonoBehaviour
                 parkingPlace.Add(pendingObject);
                 ui_ParkingCounter.UIaddParkPlace(); //Ajoute une place au compteur de place Total (UI).
             }
+        }
+        else
+        {
+            gridSize = 0.5f;
+
+            if (gridToggle.isOn)
+            {
+                gridOn = true;
+            }
+            else { gridOn = false; }
         }
     }
 
