@@ -15,4 +15,9 @@ public class CarController : MonoBehaviour
             agentCar.SetDestination(targetedParkingPlace.position);
         }
     }
+
+    public void FindParkingPlace()
+    {
+
+    }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 
-
 public class BuildingManager : MonoBehaviour
 {
     public NavMeshSurface surfaceRoad;

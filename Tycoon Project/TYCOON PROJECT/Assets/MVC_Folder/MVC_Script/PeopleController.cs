@@ -6,7 +6,7 @@ public class PeopleController : MonoBehaviour
     public Camera cam;
 
     public enum typeOfPeople {IA, Playable};
-    typeOfPeople _typeOfPeople;
+    public typeOfPeople _typeOfPeople;
 
     public NavMeshAgent agent;
 
