@@ -627,7 +627,7 @@ Transform:
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &490085997
 GameObject:
@@ -870,7 +870,7 @@ MonoBehaviour:
   navMeshRoad: {fileID: 1962044223}
   ui_ParkingCounter: {fileID: 1908914048}
   parkingPlace: []
-  objects:
+  buildableObject:
   - {fileID: 8582792888328682990, guid: cb23c5c9b0a15e749b078c9e976d1611, type: 3}
   - {fileID: 5566923504990323537, guid: f4a11f7ee13f1dd4bae34bdd8112b097, type: 3}
   - {fileID: 8582792888328682990, guid: c47c81d4d9a3f5740be4546037bb3683, type: 3}
@@ -881,6 +881,36 @@ MonoBehaviour:
   rotateAmount: 45
   gridSize: 10
   gridToggle: {fileID: 1977436851}
+--- !u!1 &522942323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522942324}
+  m_Layer: 0
+  m_Name: --->OBJECTS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &522942324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522942323}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &681108543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1272,7 +1302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4110150478673249834, guid: 7141a725020b9dc40b37837138fd474c, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4110150478673249834, guid: 7141a725020b9dc40b37837138fd474c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1646,36 +1676,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!1 &1656132487
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1656132488}
-  m_Layer: 0
-  m_Name: TestDestinationCar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1656132488
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656132487}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.56, y: 0, z: -24.46}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1764463659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,7 +2152,7 @@ Transform:
   m_Children:
   - {fileID: 2073982629}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1977436849
 GameObject:
@@ -2261,6 +2261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2017072651}
+  - component: {fileID: 2017072652}
   m_Layer: 0
   m_Name: GAME MANAGER
   m_TagString: Untagged
@@ -2282,6 +2283,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2017072652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017072650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1735e4e285cb85b4b8c9496a27f45e76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _BuildingManager: {fileID: 519254467}
+  _CarController: {fileID: 0}
+  carPrefab: {fileID: 0}
+  pendingCar: {fileID: 0}
+  carSpawner: {fileID: 0}
+  launchParkingUpdate: 0
+  entrancePrice: 0
+  numberOfParkPlace: 0
 --- !u!1 &2067744024
 GameObject:
   m_ObjectHideFlags: 0
@@ -3092,7 +3113,8 @@ MonoBehaviour:
   _ParkingPlace: {fileID: 0}
   agentCar: {fileID: 603655910618345278}
   canDrive: 1
-  targetedParkingPlace: {fileID: 1656132488}
+  targetedParkingPlace: {fileID: 0}
+  hasTargetingPP: 0
 --- !u!65 &8905397227151453190
 BoxCollider:
   m_ObjectHideFlags: 0

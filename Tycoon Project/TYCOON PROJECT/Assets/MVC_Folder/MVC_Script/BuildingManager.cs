@@ -13,7 +13,7 @@ public class BuildingManager : MonoBehaviour
 
     public List<GameObject> parkingPlace = new List<GameObject>();
 
-    public GameObject[] objects;
+    public GameObject[] buildableObject;
     [SerializeField]
     private GameObject pendingObject;
 
@@ -98,7 +98,7 @@ public class BuildingManager : MonoBehaviour
 
     public void SelectObject(int index)
     {
-        pendingObject = Instantiate(objects[index], pos, transform.rotation); //Instantiation de l'objet sélectionné selon l'index des objets référencés.
+        pendingObject = Instantiate(buildableObject[index], pos, transform.rotation); //Instantiation de l'objet sélectionné selon l'index des objets référencés.
         
         if (index == 0 || index == 1 || index == 2)
         {
