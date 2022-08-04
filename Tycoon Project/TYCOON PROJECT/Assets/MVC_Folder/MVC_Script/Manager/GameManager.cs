@@ -54,9 +54,18 @@ public class GameManager : MonoBehaviour
 
                 if (pendingCar.GetComponent<CarController>().hasTargetingPP) //La voiture instanciée a trouvé une place de parking
                 {
-                    pendingCar = null;
+                    StartCoroutine(DelayToSpawnCar());
+                    Debug.Log("SO6");
+                    //pendingCar = null; 
                 }
             }
         }
+    }
+
+    IEnumerator DelayToSpawnCar()
+    {
+        yield return new WaitForSeconds(2f);
+        pendingCar = null;
+        Debug.Log("CHO7");
     }
 }
