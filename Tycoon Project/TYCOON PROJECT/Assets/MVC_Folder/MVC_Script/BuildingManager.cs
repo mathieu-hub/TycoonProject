@@ -82,6 +82,7 @@ public class BuildingManager : MonoBehaviour
         if (pendingObject.CompareTag("ParkPlace"))
         {
             ui_ParkingCounter.UIdeleteParkPlace();
+            parkingPlace.Remove(pendingObject);
         }
         Destroy(pendingObject);
     }
