@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
     public BuildingManager _BuildingManager;
     public CarController _CarController;
 
-    [Header("Object")]
+    [Header("Objects")]
     public GameObject carPrefab;
+
+    [Header("Actualisable Objects")]
     public GameObject pendingCar;
 
     [Header("Spawner")]
