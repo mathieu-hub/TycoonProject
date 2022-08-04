@@ -20,5 +20,10 @@ public class CarController : MonoBehaviour
         {
             agentCar.SetDestination(targetedParkingPlace.position);
         }
+
+        if (gameObject.transform.position.x == targetedParkingPlace.position.x && gameObject.transform.position.z == targetedParkingPlace.position.z)
+        {
+            gameObject.transform.rotation = targetedParkingPlace.rotation;
+        }
     }
 }

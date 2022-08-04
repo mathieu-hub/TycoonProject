@@ -41,23 +41,19 @@ public class GameManager : MonoBehaviour
         {
             if (_BuildingManager.parkingPlace[i].GetComponent<ParkingPlace>().isAvailable)
             {
-                Debug.Log("SO6");
-
                 if (pendingCar == null)
                 {
-                    _BuildingManager.parkingPlace[i].GetComponent<ParkingPlace>().isAvailable = false;
+                    _BuildingManager.parkingPlace[i].GetComponent<ParkingPlace>().isAvailable = false; //Check si place de parking disponible
 
-                    pendingCar = Instantiate(carPrefab, carSpawner.position, Quaternion.identity);
+                    pendingCar = Instantiate(carPrefab, carSpawner.position, Quaternion.identity); //Instantiate car prefab
 
                     pendingCar.GetComponent<CarController>().targetedParkingPlace = 
-                        _BuildingManager.parkingPlace[i].GetComponent<ParkingPlace>().positionToPark;
+                        _BuildingManager.parkingPlace[i].GetComponent<ParkingPlace>().positionToPark; //Car prend la position de la PP comme targetPoint
                     
-                    Debug.Log("CHO7");
                 }
 
-                if (pendingCar.GetComponent<CarController>().hasTargetingPP) //Can works cause pendingCar != null
+                if (pendingCar.GetComponent<CarController>().hasTargetingPP) //La voiture instanciée a trouvé une place de parking
                 {
-                    Debug.Log("TR8");
                     pendingCar = null;
                 }
             }
