@@ -35,12 +35,14 @@ public class GameManager : MonoBehaviour
     public void ParkingUpdate()
     {
         //Actualisation de la Data
-        numberOfParkPlace = _BuildingManager.parkingPlace.Count;        
+        numberOfParkPlace = _BuildingManager.parkingPlace.Count;
 
         for (int i = 0; i < _BuildingManager.parkingPlace.Count; i++)
         {
             if (_BuildingManager.parkingPlace[i].GetComponent<ParkingPlace>().isAvailable)
-            {                
+            {
+                Debug.Log("SO6");
+
                 if (pendingCar == null)
                 {
                     _BuildingManager.parkingPlace[i].GetComponent<ParkingPlace>().isAvailable = false;
@@ -49,13 +51,15 @@ public class GameManager : MonoBehaviour
 
                     pendingCar.GetComponent<CarController>().targetedParkingPlace = 
                         _BuildingManager.parkingPlace[i].GetComponent<ParkingPlace>().positionToPark;
-
-                    if (pendingCar.GetComponent<CarController>().hasTargetingPP)
-                    {
-                        pendingCar = null;
-                    }
+                    
+                    Debug.Log("CHO7");
                 }
-                
+
+                if (pendingCar.GetComponent<CarController>().hasTargetingPP) //Can works cause pendingCar != null
+                {
+                    Debug.Log("TR8");
+                    pendingCar = null;
+                }
             }
         }
     }

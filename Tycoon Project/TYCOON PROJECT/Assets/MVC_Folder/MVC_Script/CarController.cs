@@ -3,8 +3,6 @@ using UnityEngine.AI;
 
 public class CarController : MonoBehaviour
 {
-    public ParkingPlace _ParkingPlace;
-
     public NavMeshAgent agentCar;
     public bool canDrive = false;
 
@@ -13,23 +11,14 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
-        if (!canDrive)
+        if (targetedParkingPlace != null)
         {
-            if (targetedParkingPlace != null)
-            {
-                hasTargetingPP = true;
-                canDrive = true;
-            }
+            hasTargetingPP = true;
         }
 
         if (canDrive)
         {
             agentCar.SetDestination(targetedParkingPlace.position);
         }
-    }
-
-    public void FindParkingPlace()
-    {
-        
     }
 }
