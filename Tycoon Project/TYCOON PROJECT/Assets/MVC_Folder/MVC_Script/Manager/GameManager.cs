@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
     [Header("Script References")]
     public BuildingManager _BuildingManager;
     public CarController _CarController;
+    public PeopleController _PeopleController;
 
     [Header("Objects")]
     public GameObject carPrefab;
+    public GameObject peoplePrefab;
 
     [Header("Actualisable Objects")]
     public GameObject pendingCar;
@@ -20,9 +24,26 @@ public class GameManager : MonoBehaviour
     [Header("DEBUG")]
     public bool launchParkingUpdate = false;
 
-    [Header("DATA")]
+    [Header("PARAMETERS")]
+    public float timeBtwnCarSpawn;
     public float entrancePrice;
+
+    [Header("DATA")]
     public int numberOfParkPlace;
+
+    //Locals Variable
+    private bool carSpawned = false;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.Log("Plus d'une instance de GameManager dans la scène !");
+            return;
+        }
+
+        instance = this;
+    }
 
     private void Update()
     {
@@ -32,6 +53,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //PARKING AREA
     public void ParkingUpdate()
     {
         //Actualisation de la Data
@@ -47,6 +69,8 @@ public class GameManager : MonoBehaviour
 
                     pendingCar = Instantiate(carPrefab, carSpawner.position, Quaternion.identity); //Instantiate car prefab
 
+                    carSpawned = true; //A Car appear
+
                     pendingCar.GetComponent<CarController>().targetedParkingPlace = 
                         _BuildingManager.parkingPlace[i].GetComponent<ParkingPlace>().positionToPark; //Car prend la position de la PP comme targetPoint
                     
@@ -54,9 +78,12 @@ public class GameManager : MonoBehaviour
 
                 if (pendingCar.GetComponent<CarController>().hasTargetingPP) //La voiture instanciée a trouvé une place de parking
                 {
-                    StartCoroutine(DelayToSpawnCar());
-                    Debug.Log("SO6");
-                    //pendingCar = null; 
+                    if (carSpawned)
+                    {
+                        StartCoroutine(DelayToSpawnCar());
+                        Debug.Log("SO6");
+                        carSpawned = false;
+                    }
                 }
             }
         }
@@ -64,8 +91,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator DelayToSpawnCar()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(timeBtwnCarSpawn);
         pendingCar = null;
         Debug.Log("CHO7");
+        carSpawned = true;
     }
 }

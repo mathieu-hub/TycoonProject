@@ -18,7 +18,7 @@ public class PeopleController : MonoBehaviour
         }       
     }
 
-    private void ControllingPeople() //Fonction permettant de prendre le contrôle de la destination d'un People.
+    private void ControllingPeople() //Fonction permettant de prendre le contrôle de la destination d'un People avec la souris.
     {
         //Récupère la position du pointeur de la souris dans l'espace lors du clic.
         if (Input.GetMouseButtonDown(0))

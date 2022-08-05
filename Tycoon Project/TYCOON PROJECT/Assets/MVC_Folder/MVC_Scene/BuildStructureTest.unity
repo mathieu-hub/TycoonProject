@@ -2319,6 +2319,7 @@ MonoBehaviour:
   pendingCar: {fileID: 0}
   carSpawner: {fileID: 1088010656}
   launchParkingUpdate: 0
+  timeBtwnCarSpawn: 3
   entrancePrice: 0
   numberOfParkPlace: 0
 --- !u!1 &2067744024
