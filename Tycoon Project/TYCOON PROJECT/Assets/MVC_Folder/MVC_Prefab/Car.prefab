@@ -45,11 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72afbd09d1e5efa4d9d4c8a08dee12c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ParkingPlace: {fileID: 0}
   agentCar: {fileID: 1553228989706487544}
   canDrive: 1
   targetedParkingPlace: {fileID: 0}
   hasTargetingPP: 0
+  isParked: 0
+  containPeoples: 1
+  peopleSpawner: {fileID: 2491213573328692690}
 --- !u!195 &1553228989706487544
 NavMeshAgent:
   m_ObjectHideFlags: 0

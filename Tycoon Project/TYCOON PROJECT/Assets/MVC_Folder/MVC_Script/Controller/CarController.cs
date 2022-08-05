@@ -43,6 +43,8 @@ public class CarController : MonoBehaviour
     public void SpawnPeoplesFromCar()
     {
         containPeoples = false;
+        canDrive = false;
+        gameObject.GetComponent<NavMeshAgent>().enabled = false;
         Instantiate(GameManager.instance.peoplePrefab, peopleSpawner.position, Quaternion.identity);
     }
 }

@@ -2315,7 +2315,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _BuildingManager: {fileID: 519254467}
   _CarController: {fileID: 7650437820312503057, guid: 8be8026ce3389644dabe1476791aa294, type: 3}
+  _PeopleController: {fileID: 4110150478673249832, guid: 7141a725020b9dc40b37837138fd474c, type: 3}
+  mainCam: {fileID: 1620835857}
   carPrefab: {fileID: 447641269895663692, guid: 8be8026ce3389644dabe1476791aa294, type: 3}
+  peoplePrefab: {fileID: 4110150478673249838, guid: 7141a725020b9dc40b37837138fd474c, type: 3}
   pendingCar: {fileID: 0}
   carSpawner: {fileID: 1088010656}
   launchParkingUpdate: 0

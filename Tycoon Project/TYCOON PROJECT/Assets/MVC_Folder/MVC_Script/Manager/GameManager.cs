@@ -6,19 +6,21 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [Header("Script References")]
+    [Header("SCRIPT REFERENCES")]
     public BuildingManager _BuildingManager;
     public CarController _CarController;
     public PeopleController _PeopleController;
 
-    [Header("Objects")]
+    [Header("OBJECTS")]
+    public Camera mainCam;
+    [Space(4)]
     public GameObject carPrefab;
     public GameObject peoplePrefab;
 
-    [Header("Actualisable Objects")]
+    [Header("ACTUALISABLE OBJECTS")]
     public GameObject pendingCar;
 
-    [Header("Spawner")]
+    [Header("SPAWNER")]
     public Transform carSpawner;
 
     [Header("DEBUG")]

@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+  _typeOfPeople: 0
   agent: {fileID: 4110150478673249833}
 --- !u!136 &4110150478673249837
 CapsuleCollider:

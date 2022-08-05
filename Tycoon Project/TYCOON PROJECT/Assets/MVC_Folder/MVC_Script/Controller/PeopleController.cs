@@ -10,6 +10,11 @@ public class PeopleController : MonoBehaviour
 
     public NavMeshAgent agent;
 
+    //private void OnEnable()
+    //{
+    //    cam = GameManager.instance.mainCam;
+    //}
+
     void Update()
     {
         if (_typeOfPeople == typeOfPeople.Playable)
